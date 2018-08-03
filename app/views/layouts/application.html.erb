@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vuedemo</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/vue/dist/vue.js" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<div id="app">
+  		<b>{{message}}</b><br>
+  		<input v-model="message">
+  		<span v-if="visible"><br>Now you can see me (Using conditional in vue js)<br></span>
+  		<ul>
+  			<li v-for="item in items">
+  				{{item}}
+  			</li>
+  		</ul><br>
+  		<button v-on:click="replaceMessage">Replace Message</button> 
+  	</div>
+    <%= yield %>
+  </body>
+</html>
